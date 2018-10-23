@@ -31,6 +31,6 @@ export default {
   background-color: hsl(54, 9%, 12%);
 }
 .center {
-  border: 1px black solid;
+  /* border: 1px black solid; */
 }
 </style>

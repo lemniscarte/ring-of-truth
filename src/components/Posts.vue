@@ -1,5 +1,7 @@
 <template>
-  <div v-html="compiledMarkdown"></div>
+  <div class="postbg"
+       v-html="postInput"
+  ></div>
 </template>
 
 <script>
@@ -8,38 +10,40 @@ import marked from "marked";
 export default {
   data() {
     return {
-      postInput: '### null'
+      postInput: "Loading..."
     };
   },
-  computed: {
-    compiledMarkdown() {
-      return marked(this.postInput);
-    }
-  },
+  // computed: {
+  //   compiledMarkdown() {
+  //     return marked(this.postInput);
+  //   }
+  // },
   methods: {
-    getMarkdown() {
-      async function loadPost() {
-        let getData = fetch('https://raw.githubusercontent.com/markedjs/marked/master/README.md')
-        let data = await getData;
-        console.log(data);
-        let dataText = await data.text();
-        let converted = await marked(dataText);
-        console.log(converted);        
-        return await converted
-      }
-      return loadPost();
+    fetchMarkdown() {
+      fetch(
+        "https://raw.githubusercontent.com/lemniscarte/ringoftruth/master/1.md"
+      )
+        .then(response => response.text())
+        .then(rawMD => marked(rawMD))
+        .then(convertedMD => (this.postInput = convertedMD))
+        .then(data => console.log(data))
+        .then();
+    },
+    putIn() {
+      this.postInput = this.getMarkdown();
     }
-  },
-  // created: this.getMarkdown()
-  // created: function() {
-  //   console.log('created');
-  //   console.log(this.getMarkdown());    
-  // }
-}
+  }
+};
 </script>
 
 <style scoped>
 h1 {
   font-size: unset;
+}
+.postbg {
+  /* background-color: black; */
+  color: #f4f2d8;
+  text-align: left;
+  padding: 8px;
 }
 </style>
