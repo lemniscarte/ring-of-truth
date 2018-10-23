@@ -13,15 +13,17 @@ export default {
       postInput: "Loading..."
     };
   },
-  // computed: {
-  //   compiledMarkdown() {
-  //     return marked(this.postInput);
-  //   }
-  // },
+  mounted: function() {
+    this.$nextTick(function() {
+      this.fetchMarkdown();
+      // Code that will run only after the
+      // entire view has been rendered
+    });
+  },
   methods: {
     fetchMarkdown() {
       fetch(
-        "https://raw.githubusercontent.com/lemniscarte/ringoftruth/master/1.md"
+        "https://raw.githubusercontent.com/lemniscarte/ring-of-truth/master/src/assets/1.md"
       )
         .then(response => response.text())
         .then(rawMD => marked(rawMD))
