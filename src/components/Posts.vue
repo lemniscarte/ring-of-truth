@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .postbg {
   background-color: rgba(0, 0, 0, 0.123);
   color: #f4f2d8;
@@ -45,7 +45,9 @@ export default {
   font-size: 16px;
 }
 
-p {
+.postbg h4 {
   font-style: italic;
+  color: hsl(56, 56%, 100%);
+  letter-spacing: 2.5px;
 }
 </style>

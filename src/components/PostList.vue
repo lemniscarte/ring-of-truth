@@ -18,9 +18,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .postlist {
   padding-top: 20px;
+  padding-bottom: 20px;
   display: grid;
   /* grid-template: "left center right"; */
   grid-template-columns:

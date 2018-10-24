@@ -25,7 +25,7 @@ export default {
   background-color: #3e3d34;
 }
 
-@import url("https://rsms.me/inter/inter-ui.css");
+@import url("https://fonts.googleapis.com/css?family=Didact+Gothic");
 
 body {
   margin: 0;
@@ -34,7 +34,7 @@ body {
 }
 
 #app {
-  font-family: "Inter UI", sans-serif;
+  font-family: "Didact Gothic", sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
