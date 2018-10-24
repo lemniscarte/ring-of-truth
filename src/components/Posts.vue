@@ -47,7 +47,7 @@ export default {
 
 .postbg h4 {
   font-style: italic;
-  color: hsl(56, 56%, 100%);
+  color: hsl(56, 56%, 90%);
   letter-spacing: 2.5px;
 }
 </style>

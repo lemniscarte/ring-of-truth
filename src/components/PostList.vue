@@ -23,7 +23,6 @@ export default {
   padding-top: 20px;
   padding-bottom: 20px;
   display: grid;
-  /* grid-template: "left center right"; */
   grid-template-columns:
     minmax(1px, 1fr)
     minmax(300px, 800px)
@@ -33,6 +32,5 @@ export default {
 }
 
 .center {
-  /* border: 1px black solid; */
 }
 </style>
