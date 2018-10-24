@@ -10,21 +10,19 @@ import marked from "marked";
 export default {
   data() {
     return {
-      postInput: "Loading..."
+      postInput: "Loading...",
+      baseUrl:
+        "https://raw.githubusercontent.com/lemniscarte/ring-of-truth/master/src/assets/"
     };
   },
   mounted: function() {
     this.$nextTick(function() {
       this.fetchMarkdown();
-      // Code that will run only after the
-      // entire view has been rendered
     });
   },
   methods: {
     fetchMarkdown() {
-      fetch(
-        "https://raw.githubusercontent.com/lemniscarte/ring-of-truth/master/src/assets/1.md"
-      )
+      fetch(this.baseUrl + "1.md")
         .then(response => response.text())
         .then(rawMD => marked(rawMD))
         .then(convertedMD => (this.postInput = convertedMD))
@@ -39,13 +37,15 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  font-size: unset;
-}
 .postbg {
-  /* background-color: black; */
+  background-color: rgba(0, 0, 0, 0.123);
   color: #f4f2d8;
   text-align: left;
   padding: 8px;
+  font-size: 16px;
+}
+
+p {
+  font-style: italic;
 }
 </style>

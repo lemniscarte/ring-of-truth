@@ -30,6 +30,7 @@ export default {
   color: rgb(224, 224, 224);
   background-color: hsl(54, 9%, 12%);
 }
+
 .center {
   /* border: 1px black solid; */
 }

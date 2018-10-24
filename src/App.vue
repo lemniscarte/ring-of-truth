@@ -35,12 +35,13 @@ body {
 
 #app {
   font-family: "Inter UI", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #f4f2d8;
   background-color: #3e3d34;
   font-kerning: normal;
+  letter-spacing: 1.8px;
 }
 </style>
