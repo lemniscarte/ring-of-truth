@@ -2,7 +2,10 @@
   <div class="postlist">
     <div class="left"></div>
     <div class="center">
-      <Posts></Posts>
+      <Posts
+        v-for="article in articleList"
+        :articleNumber="article"
+      ></Posts>
     </div>
     <div class="right"></div>
   </div>
@@ -12,6 +15,11 @@
 import Posts from "./Posts.vue";
 
 export default {
+  data() {
+    return {
+      articleList: [1, 2]
+    };
+  },
   components: {
     Posts
   }

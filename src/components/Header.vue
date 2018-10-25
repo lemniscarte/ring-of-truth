@@ -28,7 +28,6 @@ export default {};
   display: table;
   width: 200px;
   height: 200px;
-  /* border: 1px solid firebrick; */
   border-radius: 100%;
   background-color: rgba(178, 120, 34, 0.062);
   box-shadow: 2px 2px 2px 2px rgba(223, 194, 151, 0.445);
