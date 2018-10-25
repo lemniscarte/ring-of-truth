@@ -4,6 +4,7 @@
     <div class="center">
       <Posts
         v-for="article in articleList"
+        :key="article"
         :articleNumber="article"
       ></Posts>
     </div>

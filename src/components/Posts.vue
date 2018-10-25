@@ -49,7 +49,6 @@ export default {
   padding-left: 18px;
   margin-bottom: 20px;
   line-height: 1.5;
-  font-variant-caps:titling-caps;
 }
 
 .postbg h4 {

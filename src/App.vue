@@ -21,7 +21,7 @@ export default {
 <style>
 ::selection {
   color: #fff;
-  background-color: #3e3d34;
+  background-color: #111110;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Didact+Gothic");
