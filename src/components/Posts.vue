@@ -65,7 +65,10 @@ export default {
 }
 
 .postbg h2 {
-  font-size: 12px;
+  text-align: right;
+  font-size: 14px;
+  position: relative;
+  left: -20px;;
 }
 
 .postbg a {
