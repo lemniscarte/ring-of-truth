@@ -28,7 +28,7 @@ export default {
         .then(response => response.text())
         .then(rawMD => marked(rawMD))
         .then(convertedMD => (this.postInput = convertedMD))
-        .then(data => console.log(data))
+        // .then(data => console.log(data))
         .catch(error => (this.postInput = "" + error))
         .then();
     },
@@ -68,7 +68,7 @@ export default {
   text-align: right;
   font-size: 14px;
   position: relative;
-  left: -20px;;
+  left: -20px;
 }
 
 .postbg a {

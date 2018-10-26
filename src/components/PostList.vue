@@ -18,7 +18,7 @@ import Posts from "./Posts.vue";
 export default {
   data() {
     return {
-      articleList: [1, 2, 3, 4]
+      articleList: [1, 2]
     };
   },
   components: {
