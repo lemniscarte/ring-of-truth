@@ -53,22 +53,25 @@ export default {
   font-size: 20px;
   padding: 8px;
   padding-left: 18px;
-  margin-bottom: 20px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.774);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  /* box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.774); */
 }
 
 .postbg h4 {
   color: hsl(56, 56%, 90%);
   letter-spacing: 2px;
-  font-size: 28px;
+  font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .postbg h2 {
+  color: hsla(56, 54%, 90%, 0.473);
   text-align: right;
   font-size: 14px;
   position: relative;
   left: -20px;
+  top: -20px;
 }
 
 .postbg a {
