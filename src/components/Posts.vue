@@ -24,14 +24,19 @@ export default {
   methods: {
     fetchMarkdown() {
       fetch(this.baseUrl + this.$props.articleNumber + ".md")
+        .then(this.handleErrors)
         .then(response => response.text())
         .then(rawMD => marked(rawMD))
         .then(convertedMD => (this.postInput = convertedMD))
         .then(data => console.log(data))
+        .catch(error => (this.postInput = "" + error))
         .then();
     },
-    putIn() {
-      this.postInput = this.getMarkdown();
+    handleErrors(response) {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response;
     }
   }
 };
@@ -44,17 +49,19 @@ export default {
   background-color: rgba(0, 0, 0, 0.397);
   color: hsla(56, 56%, 90%, 0.822);
   text-align: left;
+  line-height: 1.5;
+  font-size: 20px;
   padding: 8px;
-  font-size: 16px;
   padding-left: 18px;
   margin-bottom: 20px;
-  line-height: 1.5;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.774);
 }
 
 .postbg h4 {
-  font-style: italic;
   color: hsl(56, 56%, 90%);
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
+  font-size: 28px;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 .postbg a {

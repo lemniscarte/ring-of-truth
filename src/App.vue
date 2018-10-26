@@ -34,13 +34,10 @@ body {
 
 #app {
   font-family: "Didact Gothic", sans-serif;
-  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #f4f2d8;
   background-color: #3e3d34;
-  font-kerning: normal;
-  letter-spacing: 1.8px;
+  letter-spacing: 1.6px;
 }
 </style>
