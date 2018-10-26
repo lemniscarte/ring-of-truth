@@ -61,7 +61,11 @@ export default {
   color: hsl(56, 56%, 90%);
   letter-spacing: 2px;
   font-size: 28px;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.postbg h2 {
+  font-size: 12px;
 }
 
 .postbg a {
