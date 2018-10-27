@@ -1,0 +1,17 @@
+{
+  "name": "ringoftruth",
+  "type": "static",
+  "static": {
+    "public": "dist",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "alias": "ringoftruth",
+  "files": [
+    "dist"
+  ]
+}

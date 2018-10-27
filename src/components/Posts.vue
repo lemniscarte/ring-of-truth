@@ -17,13 +17,11 @@ export default {
   },
   props: ["articleNumber"],
   mounted: function() {
-    this.$nextTick(function() {
-      this.fetchMarkdown();
-    });
+    this.fetchMarkdown();
   },
   methods: {
     fetchMarkdown() {
-      fetch(this.baseUrl + this.$props.articleNumber + ".md")
+      fetch(this.baseUrl + this.articleNumber + ".md")
         .then(this.handleErrors)
         .then(response => response.text())
         .then(rawMD => marked(rawMD))
