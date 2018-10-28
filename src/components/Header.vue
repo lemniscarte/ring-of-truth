@@ -16,7 +16,8 @@ export default {};
 
 <style>
 .title {
-  padding: 20px;
+  padding: 10px;
+  padding-bottom: 30px;
   margin-top: 20px;
   border-bottom: 1px darkorange solid;
   letter-spacing: 2px;
@@ -40,11 +41,10 @@ export default {};
   box-shadow: 2px 2px 2px 0.5px rgba(223, 194, 151, 0.445);
 }
 .wrapper {
-  font-weight: lighter;
+  font-family: "Didact Gothic";
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-  /* text-shadow: 2px 2px 2px black; */
   position: relative;
   left: 2px;
   letter-spacing: 6px;

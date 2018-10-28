@@ -19,12 +19,18 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Didact+Gothic");
+@import url("https://fonts.googleapis.com/css?family=Abel");
+
 ::selection {
   color: #fff;
   background-color: #111110;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Didact+Gothic");
+html {
+  overflow-y: overlay;
+  width: 100vw;
+}
 
 body {
   margin: 0;
@@ -33,11 +39,11 @@ body {
 }
 
 #app {
-  font-family: "Didact Gothic", sans-serif;
+  font-family: "Abel", "Didact Gothic", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #f4f2d8;
-  background-color: #3e3d34;
+  /* background-color: #2b2a24; */
   letter-spacing: 1.6px;
 }
 </style>

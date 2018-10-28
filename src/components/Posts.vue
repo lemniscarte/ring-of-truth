@@ -1,11 +1,19 @@
 <template>
-  <div class="postbg"
-       v-html="postInput"
-  ></div>
+  <Foldable> 
+    <div class="postbg"
+        v-html="postInput"
+    ></div>
+  </Foldable> 
 </template>
 
 <script>
 import marked from "marked";
+marked.setOptions({
+  gfm: true,
+  breaks: true
+});
+
+import Foldable from "./Foldable.vue";
 
 export default {
   data() {
@@ -14,6 +22,9 @@ export default {
       baseUrl:
         "https://raw.githubusercontent.com/lemniscarte/ring-of-truth/master/src/assets/"
     };
+  },
+  components: {
+    Foldable
   },
   props: ["articleNumber"],
   mounted: function() {
@@ -43,7 +54,6 @@ export default {
 <style>
 .postbg {
   border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
   background-color: rgba(0, 0, 0, 0.397);
   color: hsla(56, 56%, 90%, 0.822);
   text-align: left;
@@ -52,18 +62,17 @@ export default {
   padding: 8px;
   padding-left: 18px;
   margin-top: 40px;
-  margin-bottom: 40px;
   /* box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.774); */
 }
 
-.postbg h4 {
+.postbg h2 {
   color: hsl(56, 56%, 90%);
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   font-size: 24px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Abel";
 }
 
-.postbg h2 {
+.postbg h4 {
   color: hsla(56, 54%, 90%, 0.473);
   text-align: right;
   font-size: 14px;
