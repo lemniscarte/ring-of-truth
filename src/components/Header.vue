@@ -39,6 +39,11 @@ export default {};
   height: 200px;
   border-radius: 100%;
   background-color: rgba(255, 140, 0, 0.13);
+  background-image:
+    radial-gradient(
+      rgba(0, 0, 0, 0.651),
+      rgba(255, 140, 0, 0.13)
+    );
   box-shadow: 0 0 30px 12px rgba(255, 140, 0, 0.13);
 }
 .wrapper {
@@ -49,6 +54,6 @@ export default {};
   position: relative;
   left: 2px;
   letter-spacing: 6px;
-  color: rgba(219, 172, 172, 0.61);
+  color: rgba(255, 252, 230, 0.61);
 }
 </style>
