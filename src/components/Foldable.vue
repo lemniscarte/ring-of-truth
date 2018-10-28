@@ -50,7 +50,7 @@ export default {
 
     async: {
       type: Boolean,
-      default: false
+      default: true
     },
 
     timeout: {

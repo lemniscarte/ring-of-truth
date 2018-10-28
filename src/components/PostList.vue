@@ -29,7 +29,7 @@ export default {
 
 <style>
 .postlist {
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 20px;
   display: grid;
   grid-template-columns:
