@@ -163,7 +163,7 @@ function onElementHeightChange({ el, callback, timeout }) {
   position: relative;
 }
 .folder .folder-container {
-  transition: max-height 1s;
+  transition: max-height 0.7s ease-in-out;
   overflow: hidden;
 }
 .folder .folder-readon {
