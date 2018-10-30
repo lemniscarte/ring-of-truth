@@ -5,13 +5,9 @@
       :style="{ maxHeight: currentMaxHeight + 'px' }"
       ref="container"
     >
-      <slot/>
+      <slot>
+      </slot>
     </div>
-
-    <div
-      :class="{ 'collapsed': collapsed }"
-    ></div>
-
     <slot
       name="readon"
       :toggle="toggle"

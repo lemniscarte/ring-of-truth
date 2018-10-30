@@ -1,7 +1,7 @@
 <template>
-  <Foldable> 
+  <Foldable>
     <div class="postbg"
-        v-html="postInput"
+         v-html="postInput"
     ></div>
   </Foldable> 
 </template>

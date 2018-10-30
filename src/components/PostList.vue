@@ -2,6 +2,9 @@
   <div class="postlist">
     <div class="left"></div>
     <div class="center">
+      <div class="button-row">
+        buttons go here
+      </div>
       <Posts
         v-for="article in articleList"
         :key="article"
@@ -38,5 +41,10 @@ export default {
     minmax(1px, 1fr);
   color: rgb(224, 224, 224);
   background-color: hsl(54, 9%, 12%);
+}
+.button-row {
+  color: rgb(224, 224, 224);
+  background-color: hsl(54, 9%, 12%);
+  text-align: right;
 }
 </style>
