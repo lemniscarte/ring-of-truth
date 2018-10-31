@@ -61,8 +61,8 @@ export default {
   font-size: 20px;
   padding: 8px;
   padding-left: 18px;
-  margin-top: 40px;
-  /* box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.774); */
+  margin-top: 0;
+  /* transform: translate(0, 0); */
 }
 
 .postbg h2 {

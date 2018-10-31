@@ -30,6 +30,7 @@ export default {
 html {
   overflow-y: overlay;
   width: 100vw;
+  display: block;
 }
 
 body {
@@ -45,8 +46,4 @@ body {
   background-color: #2b2a2465;
   letter-spacing: 1.6px;
 }
-/* div {
-  border: 1px red solid;
-  border-radius: 10px;
-} */
 </style>

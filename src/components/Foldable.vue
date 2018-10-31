@@ -1,11 +1,14 @@
 <template>
   <div class="folder">
-    <div class="sticky-wrapper">
+    <slot name="closebtn">
       <div class="sticky-button"
-          v-if="!collapsed"
-          @click="toggle"
-      >❌</div>
-    </div>
+           @click="toggle"
+           :style="{ opacity: collapsed ? 0 : 0.7 }"
+      ><span class="cross">
+        ❌
+      </span>
+      </div>
+    </slot>
     <div
       class="folder-container"
       :style="{ maxHeight: currentMaxHeight + 'px' }"
@@ -34,7 +37,7 @@
 </template>
 
 <script>
-const defaultHeight = 160;
+const defaultHeight = 120;
 
 export default {
   name: "foldable",
@@ -162,10 +165,11 @@ function onElementHeightChange({ el, callback, timeout }) {
 
 <style>
 .folder {
-  position: relative;
+  box-sizing: border-box;
+  transform: translate(0, 0);
 }
 .folder .folder-container {
-  transition: max-height 0.7s ease-in-out;
+  transition: max-height 1s ease-in-out;
   overflow: hidden;
 }
 .folder .folder-readon {
@@ -181,28 +185,24 @@ function onElementHeightChange({ el, callback, timeout }) {
 }
 .folder .folder-readon .folder-text {
   vertical-align: top;
-}
-.sticky-wrapper {
-  display: table;
-  position: sticky;
-  left: 0px;
-  top: 0px;
+  top: 0;
 }
 .sticky-button {
-  display: table-cell;
-  vertical-align: middle;
+  position: sticky;
+  box-sizing: border-box;
   height: 38px;
   width: 38px;
   border-radius: 100%;
-  left: 740px;
-  top: 100px;
-  bottom: 400px;
-  position: relative;
-  color: bisque;
-  background-color: rgba(178, 34, 34, 0.473);
-  text-align: center;
+  top: 0;
+  color: white;
+  background-image: radial-gradient(rgba(255, 0, 0, 0.329), rgba(255, 0, 0, 0));
   cursor: pointer;
-  opacity: 0.5;
-  box-shadow: 2px 2px 2px 1px black;
+  transform: translate(750px, 50px);
+  text-align: center;
+  transition: opacity 0.7s ease-in-out;
+}
+.cross {
+  text-align: center;
+  line-height: 38px;
 }
 </style>
