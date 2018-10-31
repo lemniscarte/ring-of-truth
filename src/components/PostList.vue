@@ -3,7 +3,7 @@
     <div class="left"></div>
     <div class="center">
       <div class="button-row">
-        buttons go here
+        a web of sound
       </div>
       <Posts
         v-for="article in articleList"
@@ -45,6 +45,6 @@ export default {
 .button-row {
   color: rgb(224, 224, 224);
   background-color: hsl(54, 9%, 12%);
-  text-align: right;
+  text-align: center;
 }
 </style>

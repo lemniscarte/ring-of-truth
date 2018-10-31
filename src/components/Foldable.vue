@@ -1,5 +1,11 @@
 <template>
   <div class="folder">
+    <div class="sticky-wrapper">
+      <div class="sticky-button"
+          v-if="!collapsed"
+          @click="toggle"
+      >❌</div>
+    </div>
     <div
       class="folder-container"
       :style="{ maxHeight: currentMaxHeight + 'px' }"
@@ -51,7 +57,7 @@ export default {
 
     timeout: {
       type: Number,
-      default: 3000
+      default: 5000
     }
   },
 
@@ -175,5 +181,28 @@ function onElementHeightChange({ el, callback, timeout }) {
 }
 .folder .folder-readon .folder-text {
   vertical-align: top;
+}
+.sticky-wrapper {
+  display: table;
+  position: sticky;
+  left: 0px;
+  top: 0px;
+}
+.sticky-button {
+  display: table-cell;
+  vertical-align: middle;
+  height: 38px;
+  width: 38px;
+  border-radius: 100%;
+  left: 740px;
+  top: 100px;
+  bottom: 400px;
+  position: relative;
+  color: bisque;
+  background-color: rgba(178, 34, 34, 0.473);
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.5;
+  box-shadow: 2px 2px 2px 1px black;
 }
 </style>
