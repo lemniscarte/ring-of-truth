@@ -4,8 +4,10 @@
       <div class="sticky-button"
            @click="toggle"
            :style="{ opacity: collapsed ? 0 : 0.7 }"
-      ><span class="cross">
-        ❌
+      ><span>
+        <svg viewbox="0 0 30 30">
+          <path class="cross" d="M 10,10 L 20,20 M 20,10 L 10,20" />
+        </svg>
       </span>
       </div>
     </slot>
@@ -76,7 +78,8 @@ export default {
       reachThreshold: true,
       percentageMode:
         typeof this.height === "string" && this.height.indexOf("%") !== -1,
-      percentage: null
+      percentage: null,
+      isVisible: null
     };
   },
 
@@ -91,6 +94,8 @@ export default {
   mounted() {
     this.handleMount();
 
+    this.checkVisibility();
+
     setTimeout(this.handleMount, 50);
 
     if (this.async) {
@@ -103,6 +108,14 @@ export default {
   },
 
   methods: {
+    checkVisibility() {
+      var observer = new IntersectionObserver(
+        (entries, observer) => console.log(entries[0].isVisible),
+        { threshold: 1 }
+      );
+      observer.observe(document.querySelector(".folder-readon"));
+    },
+
     handleMount() {
       const contentHeight = this.$refs.container.scrollHeight;
       this.calculateThreshold(contentHeight);
@@ -190,19 +203,24 @@ function onElementHeightChange({ el, callback, timeout }) {
 .sticky-button {
   position: sticky;
   box-sizing: border-box;
-  height: 38px;
-  width: 38px;
+  height: 30px;
+  width: 30px;
   border-radius: 100%;
   top: 0;
   color: white;
   background-image: radial-gradient(rgba(255, 0, 0, 0.329), rgba(255, 0, 0, 0));
   cursor: pointer;
-  transform: translate(750px, 50px);
   text-align: center;
   transition: opacity 0.7s ease-in-out;
+  margin-left: auto;
+  margin-right: 0;
+  transform: translate(-20px, 55px);
 }
 .cross {
+  stroke: white;
+  stroke-linecap: round;
+  stroke-width: 3;
   text-align: center;
-  line-height: 38px;
+  line-height: 30px;
 }
 </style>
