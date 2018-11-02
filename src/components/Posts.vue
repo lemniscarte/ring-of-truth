@@ -1,5 +1,5 @@
 <template>
-  <Foldable>
+  <Foldable :articleIsHere="articleFetched">
     <div class="postbg"
          v-html="postInput"
     ></div>
@@ -20,13 +20,14 @@ export default {
     return {
       postInput: "Loading...",
       baseUrl:
-        "https://raw.githubusercontent.com/lemniscarte/ring-of-truth/master/src/assets/"
+        "https://raw.githubusercontent.com/lemniscarte/ring-of-truth/master/src/assets/",
+      articleFetched: false
     };
   },
   components: {
     Foldable
   },
-  props: ["articleNumber"],
+  props: ["articleNumber", "articleIsHere"],
   mounted: function() {
     this.fetchMarkdown();
   },
@@ -36,7 +37,10 @@ export default {
         .then(this.handleErrors)
         .then(response => response.text())
         .then(rawMD => marked(rawMD))
-        .then(convertedMD => (this.postInput = convertedMD))
+        .then(convertedMD => {
+          this.postInput = convertedMD;
+          this.articleFetched = true;
+        })
         // .then(data => console.log(data))
         .catch(error => (this.postInput = "" + error))
         .then();

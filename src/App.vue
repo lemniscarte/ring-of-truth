@@ -46,7 +46,4 @@ body {
   background-color: #2b2a2465;
   letter-spacing: 1.6px;
 }
-div {
-  outline: #111110;
-}
 </style>

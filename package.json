@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "marked": "^0.5.1",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-observe-visibility": "^0.4.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.4",

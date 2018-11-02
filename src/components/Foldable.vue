@@ -3,12 +3,15 @@
     <slot name="closebtn">
       <div class="sticky-button"
            @click="toggle"
-           :style="{ opacity: collapsed ? 0 : 0.7 }"
-      ><span>
-        <svg viewbox="0 0 30 30">
-          <path class="cross" d="M 10,10 L 20,20 M 20,10 L 10,20" />
+           :style="{
+             opacity: collapsed ? 0 : isCollapseVisible ? 0 : 0.7,
+             cursor: collapsed ? 'default' : 'pointer'
+           }"
+      ><div class="cross" >
+        <svg viewbox="0 0 30 30" width="30" height="30">
+          <path d="M 10,10 L 20,20 M 20,10 L 10,20" />
         </svg>
-      </span>
+      </div>
       </div>
     </slot>
     <div
@@ -29,6 +32,7 @@
         :class="{ 'collapsed': collapsed }"
         @click="toggle"
         v-if="reachThreshold"
+        v-observe-visibility="visibilityChanged"
       >
         <span class="folder-text">
           {{ collapsed ? 'Read on' : 'Collapse' }}
@@ -42,9 +46,12 @@
 const defaultHeight = 120;
 
 export default {
-  name: "foldable",
-
   props: {
+    articleIsHere: {
+      type: Boolean,
+      default: false
+    },
+
     minHeight: {
       type: Number,
       default: defaultHeight
@@ -79,7 +86,7 @@ export default {
       percentageMode:
         typeof this.height === "string" && this.height.indexOf("%") !== -1,
       percentage: null,
-      isVisible: null
+      isCollapseVisible: false
     };
   },
 
@@ -94,8 +101,6 @@ export default {
   mounted() {
     this.handleMount();
 
-    this.checkVisibility();
-
     setTimeout(this.handleMount, 50);
 
     if (this.async) {
@@ -106,14 +111,13 @@ export default {
       });
     }
   },
-
   methods: {
-    checkVisibility() {
-      var observer = new IntersectionObserver(
-        (entries, observer) => console.log(entries[0].isVisible),
-        { threshold: 1 }
-      );
-      observer.observe(document.querySelector(".folder-readon"));
+    visibilityChanged(isVisible) {
+      if (isVisible) {
+        this.isCollapseVisible = true;
+      } else {
+        this.isCollapseVisible = false;
+      }
     },
 
     handleMount() {
@@ -137,7 +141,10 @@ export default {
       }
     },
 
-    toggle() {
+    toggle(event) {
+      if (event.target.localName !== "span" && this.collapsed) {
+        return;
+      }
       this.collapsed = !this.collapsed;
       if (this.collapsed) {
         this.currentMaxHeight = this.threshold;
@@ -217,6 +224,7 @@ function onElementHeightChange({ el, callback, timeout }) {
   transform: translate(-20px, 55px);
 }
 .cross {
+  /* background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Ym94PSIwIDAgMzAgMzAiPjxwYXRoIGQ9Ik0gMTAsMTAgTCAyMCwyMCBNIDIwLDEwIEwgMTAsMjAiIC8+PC9zdmc+"); */
   stroke: white;
   stroke-linecap: round;
   stroke-width: 3;
