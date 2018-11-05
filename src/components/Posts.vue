@@ -1,5 +1,5 @@
 <template>
-  <Foldable :articleIsHere="articleFetched">
+  <Foldable :isArticleHere="articleFetched">
     <div class="postbg"
          v-html="postInput"
     ></div>
@@ -10,7 +10,10 @@
 import marked from "marked";
 marked.setOptions({
   gfm: true,
-  breaks: true
+  breaks: true,
+  highlight: function(code) {
+    return require("highlight.js").highlight("javascript", code).value;
+  }
 });
 
 import Foldable from "./Foldable.vue";
@@ -18,7 +21,7 @@ import Foldable from "./Foldable.vue";
 export default {
   data() {
     return {
-      postInput: "Loading...",
+      postInput: "Fetching article...",
       baseUrl:
         "https://raw.githubusercontent.com/lemniscarte/ring-of-truth/master/src/assets/",
       articleFetched: false
@@ -27,7 +30,7 @@ export default {
   components: {
     Foldable
   },
-  props: ["articleNumber", "articleIsHere"],
+  props: ["articleNumber", "isArticleHere"],
   mounted: function() {
     this.fetchMarkdown();
   },
@@ -36,12 +39,12 @@ export default {
       fetch(this.baseUrl + this.articleNumber + ".md")
         .then(this.handleErrors)
         .then(response => response.text())
+        // .then(data => console.log(data))
         .then(rawMD => marked(rawMD))
         .then(convertedMD => {
           this.postInput = convertedMD;
           this.articleFetched = true;
         })
-        // .then(data => console.log(data))
         .catch(error => (this.postInput = "" + error))
         .then();
     },
@@ -94,5 +97,12 @@ export default {
 
 .postbg a:hover {
   background-color: black;
+}
+
+pre {
+  background-color: rgba(0, 0, 0, 0.418);
+  border-radius: 20px;
+  padding: 10px;
+  /* width: 500px; */
 }
 </style>
