@@ -224,7 +224,6 @@ function onElementHeightChange({ el, callback, timeout }) {
   transform: translate(-20px, 55px);
 }
 .cross {
-  /* background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Ym94PSIwIDAgMzAgMzAiPjxwYXRoIGQ9Ik0gMTAsMTAgTCAyMCwyMCBNIDIwLDEwIEwgMTAsMjAiIC8+PC9zdmc+"); */
   stroke: white;
   stroke-linecap: round;
   stroke-width: 3;
@@ -233,16 +232,19 @@ function onElementHeightChange({ el, callback, timeout }) {
 }
 
 code {
-  color: unset;
-  overflow: scroll;
   font-size: 14px;
+  overflow: auto;
+  overflow-y: hidden;
+  line-height: unset;
+  letter-spacing: unset;
 }
 
-/*
-
-Gruvbox style (dark) (c) Pavel Pertsev (original style at https://github.com/morhetz/gruvbox)
-
-*/
+pre {
+  background-color: rgba(0, 0, 0, 0.418);
+  border-radius: 20px;
+  padding: 10px;
+  overflow: auto;
+}
 
 .hljs {
   display: block;
@@ -262,7 +264,7 @@ Gruvbox style (dark) (c) Pavel Pertsev (original style at https://github.com/mor
 .hljs-keyword,
 .hljs-link,
 .hljs-selector-tag {
-  color: #fb4934;
+  color: #fb7d34;
 }
 
 /* Gruvbox Blue */
@@ -273,7 +275,7 @@ Gruvbox style (dark) (c) Pavel Pertsev (original style at https://github.com/mor
 .hljs-strong,
 .hljs-title,
 .hljs-variable {
-  color: #83a598;
+  color: #509b7e;
 }
 
 /* Gruvbox Yellow */

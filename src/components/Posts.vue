@@ -66,7 +66,7 @@ export default {
   text-align: left;
   line-height: 1.5;
   font-size: 20px;
-  padding: 8px;
+  padding: 18px;
   padding-left: 18px;
   margin-top: 0;
   /* transform: translate(0, 0); */
@@ -97,12 +97,5 @@ export default {
 
 .postbg a:hover {
   background-color: black;
-}
-
-pre {
-  background-color: rgba(0, 0, 0, 0.418);
-  border-radius: 20px;
-  padding: 10px;
-  /* width: 500px; */
 }
 </style>
