@@ -235,8 +235,7 @@ code {
   font-size: 14px;
   overflow: auto;
   overflow-y: hidden;
-  line-height: unset;
-  letter-spacing: unset;
+  letter-spacing: 1px;
 }
 
 pre {
@@ -244,6 +243,7 @@ pre {
   border-radius: 20px;
   padding: 10px;
   overflow: auto;
+  line-height: 1;
 }
 
 .hljs {
