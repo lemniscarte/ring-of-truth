@@ -239,11 +239,14 @@ code {
 }
 
 pre {
-  background-color: rgba(0, 0, 0, 0.418);
+  background-color: rgba(73, 65, 65, 0.178);
   border-radius: 20px;
   padding: 10px;
   overflow: auto;
   line-height: 1;
+  padding: 16px;
+  box-shadow: inset 0 0 14px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0 rgb(0, 0, 0);
 }
 
 .hljs {
