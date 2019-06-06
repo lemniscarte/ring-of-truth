@@ -1,7 +1,7 @@
 <template>
   <Foldable :isArticleHere="articleFetched">
     <div class="postbg"
-         v-html="postInput"
+        v-html="postInput"
     ></div>
   </Foldable> 
 </template>

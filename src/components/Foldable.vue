@@ -2,11 +2,11 @@
   <div class="folder">
     <slot name="closebtn">
       <div class="sticky-button"
-           @click="toggle"
-           :style="{
-             opacity: collapsed ? 0 : isCollapseVisible ? 0 : 0.7,
-             cursor: collapsed ? 'default' : 'pointer'
-           }"
+          @click="toggle"
+          :style="{
+            opacity: collapsed ? 0 : isCollapseVisible ? 0 : 0.7,
+            cursor: collapsed ? 'default' : 'pointer'
+          }"
       ><div class="cross" >
         <svg viewbox="0 0 30 30" width="30" height="30">
           <path d="M 10,10 L 20,20 M 20,10 L 10,20" />
