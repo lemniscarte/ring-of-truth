@@ -47,11 +47,6 @@ const defaultHeight = 120;
 
 export default {
   props: {
-    articleIsHere: {
-      type: Boolean,
-      default: false
-    },
-
     minHeight: {
       type: Number,
       default: defaultHeight
