@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "highlight.js": "^9.15.6",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "vue": "^2.5.17",
     "vue-observe-visibility": "^0.4.3"
   },
